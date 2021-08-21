@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope 'api', :defaults => { format: 'json' } do
     root to: 'welcome#index'
 
+    resources :users
     namespace :auth, shallow_prefix: '' do
       post 'login', to: 'login#store'
       post 'register', to: 'registered#store'

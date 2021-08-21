@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
     # Prepending initial state.
     def prepending
         @status_code = 200
-        @message = ''
+        @message = 'Successfully'
         @errors = []
     end
 
