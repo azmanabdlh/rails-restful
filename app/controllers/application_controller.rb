@@ -35,7 +35,7 @@ class ApplicationController < ActionController::API
         @errors = ex.errors
         @message = ex.message
 
-        render 'layouts/app'
+        render 'layouts/app', status: ex.status_code
     end
 
 end
