@@ -5,15 +5,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        begin
-            @user = User.find(params[:id])
-
-        rescue ActiveRecord::RecordNotFound
-            raise ResponseError.new(
-                message: "User by id #{params[:id]} not found.",
-                status_code: 404
-            )
-        end
     end
 
     def create
