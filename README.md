@@ -1,24 +1,18 @@
-# README
+# Rails RESTful
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Repo ini dibuat untuk mengatur riwayat pembelajaran rails, berikut beberapa agenda yang akan dipelajari.
 
-Things you may want to cover:
+## STEP 1
+1. CRUD
+2. CRUD dengan relasi
+3. CRUD dengan relasi (Many-to-Many)
+4. Uploader CRUD
 
-* Ruby version
+## STEP 2
+1. Otentikasi
+2. JWT, Token dan API-Key
+3. Oterisasi dengan mengatur validalitas JWT, Token dan API-Key
+4. Personal API-Key
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### STEP 3
+....
