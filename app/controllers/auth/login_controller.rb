@@ -1,6 +1,6 @@
 class Auth::LoginController < ApplicationController
 
-    def store
-        # not implements.
+    def create
+        # not implemens
     end
 end

@@ -1,23 +1,20 @@
 class UsersController < ApplicationController
-    before_action :find, only: [:destroy, :show, :update]
+    before_action :find_or_fail, only: [:destroy, :show, :update]
     def index
         @users = User.all
     end
 
     def show
+        # Implicit render.
     end
 
     def create
         body = params.permit(
-            :name, :username, :email, :password, :password_confirmation
+            :name, :username, :email, :password
         )
 
         @user = User.new(body)
-
-        if not @user.save
-            errors = @user.errors.full_messages
-            raise ResponseError.new(status_code: 502, errors: errors)
-        end
+        raise ResponseError.new code: 401, errors: @user.errors.full_messages if not @user.valid?
 
     end
 
@@ -26,13 +23,17 @@ class UsersController < ApplicationController
     end
 
     def update
-        # not implements
+        @user.update(
+            params.permit(
+                :name, :username, :email, :password
+            )
+        )
     end
 
 
     private
 
-    def find
+    def find_or_fail
         begin
             @user = User.find(params[:id])
 

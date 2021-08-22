@@ -6,7 +6,6 @@ class ApplicationController < ActionController::API
 
     # Prepending initial state.
     def prepending
-        @status_code = 200
         @message = 'Successfully'
         @errors = []
     end
@@ -15,23 +14,18 @@ class ApplicationController < ActionController::API
     class ResponseError < StandardError
         attr_reader :message, :errors, :status_code
 
-        def initialize(
-            message: 'ResponseError',
-            status_code: 200,
-            errors: []
-        )
+        def initialize(**kwargs)
             super
 
-            @message = message
-            @errors = errors
-            @status_code = status_code
+            @message = kwargs[:message]
+            @errors = kwargs[:errors]
+            @status_code = kwargs[:code]
 
         end
     end
 
 
     rescue_from ResponseError do |ex|
-        @status_code = ex.status_code
         @errors = ex.errors
         @message = ex.message
 
