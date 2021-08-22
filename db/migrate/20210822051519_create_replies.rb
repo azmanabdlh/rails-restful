@@ -8,4 +8,9 @@ class CreateReplies < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
+
+
+  def down
+    drop_table :replies
+  end
 end

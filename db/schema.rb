@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_051519) do
   create_table "posts", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_08_22_051519) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "posts", "users"
   add_foreign_key "replies", "posts"
   add_foreign_key "replies", "users"
 end
