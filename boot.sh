@@ -1,4 +1,4 @@
 bundle install
-rails db:migrate
+rails db:migrate:reset
 rails db:seed
 rails s
