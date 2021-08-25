@@ -1,7 +1,11 @@
+seeders = Dir[File.join(Rails.root, 'db/seeders', '*_seeder.rb')]
 
-# load my seeders.
-require_relative 'seeders/users_seeder'
-require_relative 'seeders/posts_seeder'
-require_relative 'seeders/replies_seeder'
+
+puts 'Seeds running....'
+
+seeders.sort.each do |seed|
+  # load each seeders.
+  load seed
+end
 
 puts 'Seeds run successfully✨'

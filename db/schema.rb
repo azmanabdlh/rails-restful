@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_152508) do
+ActiveRecord::Schema.define(version: 2021_08_25_102725) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2021_08_22_152508) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "posts_taggables", charset: "utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_posts_taggables_on_post_id"
+    t.index ["tag_id"], name: "index_posts_taggables_on_tag_id"
+  end
+
   create_table "replies", charset: "utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
@@ -57,6 +66,12 @@ ActiveRecord::Schema.define(version: 2021_08_22_152508) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_replies_on_post_id"
     t.index ["user_id"], name: "index_replies_on_user_id"
+  end
+
+  create_table "tags", charset: "utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
