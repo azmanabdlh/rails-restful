@@ -1,6 +1,7 @@
-class Auth::LoginController < ApplicationController
-
+module Auth
+  class LoginController < ApplicationController
     def create
-        # not implemens
+        # not implemenst
     end
+  end
 end
