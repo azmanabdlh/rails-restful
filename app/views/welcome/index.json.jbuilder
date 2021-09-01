@@ -1,0 +1,1 @@
+json.message 'Hello world, welcome to Rails 6.'
