@@ -8,8 +8,8 @@ default: &default
   encoding: utf8
   username: <%= ENV.fetch('DB_USERNAME') %>
   password: <%= ENV.fetch('DB_PASSWORD') %>
-  socket: <%= ENV.fetch('DB_SOCKET") %>
-  pool: <%= ENV.fetch('RAILS_MAX_THREADS") { 5 } %>
+  socket: <%= ENV.fetch('DB_SOCKET') %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
   port: <%= ENV.fetch('DB_PORT') %>
   timeout: 5000
   # You can add database name with available environment scope.
@@ -30,7 +30,7 @@ development:
 test:
   <<: *default
   adapter: <%= ENV.fetch('DB_ADAPTER_TEST', ENV['DB_ADAPTER']) %>
-  database: <%= ENV.fetch("DB_NAME") + '_test' %>
+  database: <%= ENV.fetch('DB_NAME') + '_test' %>
 
 production:
   <<: *default
