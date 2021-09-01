@@ -1,4 +1,7 @@
-20.times do
+
+DEFAULT_AVATAR = Rails.root.join('app/assets/images', 'default-avatar.jpeg').freeze
+
+10.times do
 
   user = User.new
   user.name = Faker::Name.name
@@ -6,8 +9,8 @@
   user.email = Faker::Internet.safe_email
   user.password = 'password'
 
-  file = File.open(File.join(Rails.root, 'app/assets/images', 'default-avatar.jpeg'))
-  user.avatar.attach(io: file, filename: 'default-avatar.jpeg', content_type: 'image/jpeg')
+  file = File.open(DEFAULT_AVATAR)
+  user.avatar.attach(io: file, filename: 'default-avatar.jpeg')
 
   user.save!
 end
