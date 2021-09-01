@@ -2,7 +2,7 @@
   # Find random user.
   user = User.all.sample
 
-  Post.create(
+  Post.create!(
     title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph,
     user: user

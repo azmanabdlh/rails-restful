@@ -1,4 +1,4 @@
-seeders = Dir[File.join(Rails.root, 'db/seeders', '*_seeder.rb')]
+seeders = Dir[File.join(Rails.root, 'db/seeders', '*_*_seeder.rb')]
 
 
 puts 'Seeds running....'

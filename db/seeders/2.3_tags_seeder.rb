@@ -1,5 +1,5 @@
 50.times do
-  Tag.create(
+  Tag.create!(
     name: Faker::Games::Pokemon.name
   )
 end

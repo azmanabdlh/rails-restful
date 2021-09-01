@@ -1,4 +1,7 @@
-bundle install
-rails db:migrate:reset
-rails db:seed
-rails s
+bin/bundle install
+bin/rake db:migrate:reset
+bin/rake db:seed
+puts '='*20
+bin/bundle s
+puts '='*20
+bin/rails s

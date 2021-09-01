@@ -70,11 +70,10 @@ ActiveRecord::Schema.define(version: 2021_08_31_163036) do
     t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
-  create_table "tags", id: { type: :bigint, unsigned: true }, charset: "utf8", force: :cascade do |t|
+  create_table "tags", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["id"], name: "id", unique: true
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|

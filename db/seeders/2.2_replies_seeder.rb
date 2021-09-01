@@ -3,7 +3,8 @@
   user = User.all.sample
   post = Post.all.sample
 
-  Reply.create(
+
+  Reply.create!(
     content: Faker::Lorem.sentence,
     post: post,
     user: user
