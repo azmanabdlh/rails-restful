@@ -31,4 +31,5 @@
 /config/master.key
 
 # Ignore environment keys.
-/config/environment.rb
+.env
+/node_modules/
